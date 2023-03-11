@@ -3,7 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        lst_index = m+n-1
         i = m-1
         j = n-1
         for k in range(m+n-1,-1,-1):
@@ -19,3 +18,12 @@ class Solution:
             else:
                 nums1[k] = nums1[i]
                 i -= 1
+
+#version EZ
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        for i in range(len(nums := sorted(nums1[:m]+nums2))):
+            nums1[i] = nums[i]
